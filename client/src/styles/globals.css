@@ -1,0 +1,253 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* === Global Styles === */
+body {
+  @apply bg-[#FFFFFF] text-gray-900 font-sans;
+  overflow-y: auto;
+}
+
+/* === Header === */
+.header {
+  @apply flex items-center p-5 bg-[#E8F8FF] shadow-md;
+}
+
+.header img {
+  @apply h-12 mr-2;
+}
+
+.header h1 {
+  @apply text-2xl font-bold m-0;
+}
+
+/* === Centered Main Content === */
+.main-container {
+  @apply flex flex-col justify-center items-center min-h-[87vh] text-center;
+}
+
+/* === Hero Section Text === */
+.welcome-text {
+  font-size: 2.5rem; /* 4xl */
+  font-weight: 400; /* Normal weight */
+  color: #1f2937; /* Gray-900 */
+}
+
+.brand-text {
+  font-weight: 700; /* Bold */
+  color: #1f2937; /* Matches welcome-text (gray-900) */
+}
+
+.subtext {
+  font-size: 1.125rem; /* lg */
+  color: #4a5568; /* Gray-700 */
+  white-space: nowrap; /* Prevents text wrapping */
+}
+
+
+/* === Improved Buttons === */
+.button-primary {
+  @apply w-56 px-6 py-3 text-lg rounded-xl text-white bg-gray-900 shadow-lg 
+    transition-all duration-300 transform hover:scale-105 hover:bg-gray-700;
+}
+
+.button-secondary {
+  @apply w-56 px-6 py-3 text-lg rounded-xl text-gray-900 bg-gray-200 shadow-md
+    transition-all duration-300 transform hover:scale-105 hover:bg-gray-300;
+}
+
+.button-tertiary {
+  @apply w-56 px-6 py-3 text-lg rounded-xl text-white bg-gray-500 shadow-md
+    transition-all duration-300 transform hover:scale-105 hover:bg-gray-300;
+}
+
+/* === Navigation Bar (Centered in Header) === */
+.navbar {
+  @apply flex gap-8;
+}
+
+.nav-button {
+  @apply flex flex-col items-center justify-center text-center cursor-pointer transition-transform duration-300;
+}
+
+.nav-button img {
+  @apply h-8 w-8;
+}
+
+.nav-text {
+  @apply text-xs mt-1;
+}
+
+/* === Scenario Cards === */
+.scenario-card {
+  @apply relative bg-white border border-gray-300 p-6 rounded-xl shadow-md cursor-pointer transition-transform duration-300;
+}
+
+.scenario-card:hover {
+  @apply scale-105;
+}
+
+/* Hover Overlay */
+.scenario-hover {
+  @apply absolute inset-0 bg-gray-900 text-white opacity-0 flex justify-center items-center p-4 rounded-xl transition-opacity duration-300;
+}
+
+.scenario-card:hover .scenario-hover {
+  @apply opacity-90;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+.loading-dots {
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #555;
+}
+
+.loading-dots span {
+  display: inline-block;
+  animation: bounce 1.4s infinite ease-in-out;
+}
+
+.loading-dots span:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.loading-dots span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.loading-dots span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+/* Progress Bar Container */
+.progress-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 80%;
+  margin: 0 auto;
+  position: relative;
+  padding-top: 20px;
+}
+
+/* Progress Bar Track */
+.progress-bar-track {
+  width: 100%;
+  height: 10px;
+  background-color: #ddd;
+  position: absolute;
+  top: 40%;
+  left: 0;
+  z-index: 0;
+  margin-top: -2.5px;
+  border-radius: 50px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Progress Bar Fill (darker grey) */
+.progress-bar-fill {
+  height: 10px;
+  background-color: #555; /* darker grey fill */
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50px;
+  transition: width 0.3s ease;
+}
+
+/* Circle Container */
+.circle-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 5%;
+  position: relative;
+  z-index: 1;
+}
+
+/* Circle base */
+.progress-circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #ccc; /* Unfilled */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: -2.5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s ease;
+}
+
+/* Filled circle for past & current */
+.progress-circle.completed {
+  background-color: #555;
+}
+
+
+/* Category label styles */
+.category-name {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: normal;
+}
+
+/* Bold current category label */
+.category-name.current {
+  font-weight: bold;
+}
+
+
+/* Progress Bar Track */
+.progress-bar-track {
+  width: 100%; /* Full width for the track */
+  height: 10px;
+  background-color: #ddd;
+  position: absolute;
+  top: 40%; /* Center it vertically between the circles */
+  left: 0;
+  z-index: 0; /* Make sure the track is behind the circles */
+  margin-top: -2.5px; /* Adjust to center the line perfectly */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow */
+  border-radius: 50px; /* Rounded corners for the progress bar */
+}
+
+.progress-bar-fill {
+  height: 10px;
+  background-color: #555;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50px; /* Rounded corners for the progress bar */
+}
+
+/* Adjusts the spacing between circles */
+.progress-bar .circle-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 5%; /* Push the circles inward from both the left and right sides */
+
+}
+
+/* auto expanding the text */
+.auto-expand-textarea {
+  overflow: hidden;
+  transition: height 0.2s ease;
+
+}
