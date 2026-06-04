@@ -6,6 +6,7 @@
 
 ## Project Overview
 Project Demo Video: https://www.youtube.com/watch?v=SuVnd9oylfo
+
 OSCE (Objective Structured Clinical Examination) exams are essential in medical education, yet traditional preparation methods like peer role-playing are often inconsistent and difficult to access on demand. Clinical Clarity addresses this by providing a repeatable, low-pressure environment for students to refine their skills.
 
 ## Key Features
